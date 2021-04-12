@@ -20,10 +20,7 @@ export default function Page(props) {
 function MyWonderfulComponent(props) {
     const {id, options, children, other} = props;
     const [summ, setSumm] = useState(other);
-    const classes = makeStyles({
-        h1: {
-            color: 'red'
-        }});
+    const classes = useStyles();
 
     useEffect(() => {
         if (id && options && options.params && options.params.fields && options.params.fields.isDynamic) {
