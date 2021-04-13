@@ -2,6 +2,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Pre-First:
+to work with fake REST API, please install globally
+[json-server](https://github.com/typicode/json-server)
+
+```bash
+npm i -g json-server
+```
+
 First, run the development server:
 
 ```bash
