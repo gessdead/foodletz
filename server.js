@@ -20,11 +20,8 @@ app.prepare().then(() => {
         } else if (pathname === '/b') {
             app.render(req, res, '/b', query)
         } else {
-            app.render(req, res, '/', query)
-            // handle(req, res, parsedUrl)
+            handle(req, res, parsedUrl)
         }
-
-        console.log(parsedUrl)
 
     }).listen(3000, (err) => {
         if (err) throw err
