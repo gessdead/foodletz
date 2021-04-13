@@ -8,16 +8,14 @@ const useStyles = makeStyles({
     }
 });
 
-export default function Page(props) {
-    const {id, options, count, color, data} = props;
-    console.log(props)
-    return <MyWonderfulComponent id="id"
+export default function Page({id, options, count, color, data}) {
+    return <MyWonderfulComponent id="data"
                                  options="options"
                                  count="count"
                                  color="color"
-                                 data={data}>I'm text from a component
+                                 data="data">I'm text from a component
         <br/>
-        <span>{data.data}</span>
+        <span>{data.text}</span>
     </MyWonderfulComponent>
 }
 
@@ -30,8 +28,7 @@ export async function getServerSideProps() {
     return { props: { data } }
 }
 
-function MyWonderfulComponent(props) {
-    const {id, options, children, other} = props;
+function MyWonderfulComponent({id, options, children, other}) {
     const [summ, setSumm] = useState(other);
     const classes = useStyles();
 

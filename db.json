@@ -4,6 +4,6 @@
     "options": "some opts",
     "count": 1,
     "color": "gray",
-    "data": "Hello from SSR"
+    "text": "Hello from SSR"
   }
 }
