@@ -1,0 +1,9 @@
+{
+  "test": {
+    "id": 1,
+    "options": "some opts",
+    "count": 1,
+    "color": "gray",
+    "data": "Hello from SSR"
+  }
+}

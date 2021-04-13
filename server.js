@@ -6,6 +6,8 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+const logText = '> Hello from SSR!'
+
 app.prepare().then(() => {
     createServer((req, res) => {
         // Be sure to pass `true` as the second argument to `url.parse`.
@@ -18,10 +20,14 @@ app.prepare().then(() => {
         } else if (pathname === '/b') {
             app.render(req, res, '/b', query)
         } else {
-            handle(req, res, parsedUrl)
+            app.render(req, res, '/', query)
+            // handle(req, res, parsedUrl)
         }
+
+        console.log(parsedUrl)
+
     }).listen(3000, (err) => {
         if (err) throw err
-        console.log('> Ready on http://localhost:3000')
+        console.log(logText);
     })
 })

@@ -10,11 +10,24 @@ const useStyles = makeStyles({
 
 export default function Page(props) {
     const {id, options, count, color, data} = props;
+    console.log(props)
     return <MyWonderfulComponent id="id"
                                  options="options"
                                  count="count"
                                  color="color"
-                                 data="data">I'm text from a component</MyWonderfulComponent>
+                                 data={data}>I'm text from a component
+        <br/>
+        <span>{data.data}</span>
+    </MyWonderfulComponent>
+}
+
+export async function getServerSideProps() {
+    // Fetch data from external API
+    const res = await fetch(`http://localhost:3000/test`)
+    const data = await res.json()
+
+    // Pass data to the page via props
+    return { props: { data } }
 }
 
 function MyWonderfulComponent(props) {
